@@ -2,7 +2,6 @@ package net.vkits.platform.manager;
 
 import net.vkits.platform.config.WxConfig;
 import net.vkits.platform.config.WxMulitConfig;
-import net.vkits.platform.dto.WxMulitConfigDto;
 import net.vkits.platform.handler.*;
 import net.vkits.platform.handler.gzh1.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,20 +12,14 @@ import org.springframework.stereotype.Component;
  * @author chi  2017-08-29 18:33
  **/
 @Component
-@Scope("prototype")
+@Scope("prototype")//设置为多例
 public class WxMulitService extends BaseWxService {
 
     private WxMulitConfig wxConfig = new WxMulitConfig();
 
-
-   /* public WxMulitService(WxMulitConfigDto wxMulitConfigDto) {
-        wxConfig.setClientId(wxMulitConfigDto.getClientId());
-        wxConfig.setAesKey(wxMulitConfigDto.getAesKey());
-        wxConfig.setAppid(wxMulitConfigDto.getAppid());
-        wxConfig.setAppsecret(wxMulitConfigDto.getAppsecret());
-        wxConfig.setBillTemplateId(wxMulitConfigDto.getBillTemplateId());
-        wxConfig.setToken(wxMulitConfigDto.getToken());
-    }*/
+    protected void setServerConfig(WxMulitConfig wxConfig) {
+        this.wxConfig = wxConfig;
+    }
 
 
     @Autowired
@@ -44,14 +37,9 @@ public class WxMulitService extends BaseWxService {
     @Autowired
     private Gzh1SubscribeHandler subscribeHandler;
 
-
     @Override
     protected WxConfig getServerConfig() {
         return this.wxConfig;
-    }
-
-    protected void setServerConfig(WxMulitConfig wxConfig) {
-        this.wxConfig = wxConfig;
     }
 
     @Override
@@ -79,10 +67,9 @@ public class WxMulitService extends BaseWxService {
         return this.msgHandler;
     }
 
-    //TODO chi
     @Override
     protected AbstractHandler getScanHandler() {
-        return null;
+        return this.getScanHandler();
     }
 
 }
