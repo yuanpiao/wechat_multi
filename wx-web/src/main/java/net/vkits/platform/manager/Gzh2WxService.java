@@ -1,4 +1,4 @@
-package net.vkits.platform.service;
+package net.vkits.platform.manager;
 
 import net.vkits.platform.handler.AbstractHandler;
 import net.vkits.platform.handler.MsgHandler;

@@ -1,4 +1,4 @@
-package net.vkits.platform.service;
+package net.vkits.platform.manager;
 
 import net.vkits.platform.config.WxConfig;
 import net.vkits.platform.handler.*;
@@ -10,7 +10,6 @@ import me.chanjar.weixin.mp.bean.kefu.result.WxMpKfOnlineList;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 import me.chanjar.weixin.mp.constant.WxMpEventConstants;
-import net.vkits.platform.handler.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

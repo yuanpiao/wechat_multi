@@ -2,7 +2,7 @@ package net.vkits.platform.handler;
 
 import java.util.Map;
 
-import net.vkits.platform.service.BaseWxService;
+import net.vkits.platform.manager.BaseWxService;
 import org.apache.commons.lang3.StringUtils;
 
 import net.vkits.platform.builder.TextBuilder;

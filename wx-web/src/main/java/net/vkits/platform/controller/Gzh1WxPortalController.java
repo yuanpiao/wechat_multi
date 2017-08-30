@@ -1,9 +1,8 @@
 package net.vkits.platform.controller;
 
-import net.vkits.platform.service.BaseWxService;
-import net.vkits.platform.service.Gzh1WxService;
+import net.vkits.platform.manager.BaseWxService;
+import net.vkits.platform.manager.Gzh1WxService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,11 +20,6 @@ public class Gzh1WxPortalController extends AbstractWxPortalController{
   @Override
   protected BaseWxService getWxService() {
     return this.wxService;
-  }
-
-  @GetMapping("/test")
-  public String test(){
-    return "djlkj";
   }
 
 }

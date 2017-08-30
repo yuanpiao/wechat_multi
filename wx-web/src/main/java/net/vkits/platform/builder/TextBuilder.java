@@ -1,6 +1,6 @@
 package net.vkits.platform.builder;
 
-import net.vkits.platform.service.BaseWxService;
+import net.vkits.platform.manager.BaseWxService;
 
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;

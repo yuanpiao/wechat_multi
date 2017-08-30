@@ -1,7 +1,7 @@
 package net.vkits.platform.controller;
 
-import net.vkits.platform.service.BaseWxService;
-import net.vkits.platform.service.Gzh2WxService;
+import net.vkits.platform.manager.BaseWxService;
+import net.vkits.platform.manager.Gzh2WxService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
