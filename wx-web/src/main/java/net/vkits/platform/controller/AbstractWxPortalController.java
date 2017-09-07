@@ -1,6 +1,6 @@
 package net.vkits.platform.controller;
 
-import net.vkits.platform.manager.BaseWxService;
+import net.vkits.platform.wxService.BaseWxService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;

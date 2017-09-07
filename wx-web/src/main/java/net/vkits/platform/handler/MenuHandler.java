@@ -7,7 +7,7 @@ import net.vkits.platform.builder.AbstractBuilder;
 import net.vkits.platform.builder.ImageBuilder;
 import net.vkits.platform.builder.TextBuilder;
 import net.vkits.platform.dto.WxMenuKey;
-import net.vkits.platform.manager.BaseWxService;
+import net.vkits.platform.wxService.BaseWxService;
 
 import me.chanjar.weixin.common.api.WxConsts;
 import me.chanjar.weixin.common.session.WxSessionManager;

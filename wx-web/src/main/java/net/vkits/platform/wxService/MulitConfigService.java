@@ -1,4 +1,4 @@
-package net.vkits.platform.manager;
+package net.vkits.platform.wxService;
 
 import net.vkits.platform.config.WxMulitConfig;
 import net.vkits.platform.dto.WxMulitConfigDto;
@@ -32,11 +32,6 @@ public class MulitConfigService {
     @PostConstruct
     public void wxMulitServiceInit(){
         List<WxMulitConfigDto> wxMulitConfigDtos = wxMulitConfigWebService.getAllWxConfig();
-
-      /*  wxMulitConfigDtos.stream()
-                .peek(wxMulitConfigDto ->
-                        hashMap.put(wxMulitConfigDto.getClientId(),new WxMulitService(wxMulitConfigDto)));
-    */
 
         for (WxMulitConfigDto wxMulitConfigDto: wxMulitConfigDtos) {
             WxMulitService wxMulit = (WxMulitService)SpringUtil.getBean("wxMulitService");

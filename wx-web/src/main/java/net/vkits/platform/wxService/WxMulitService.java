@@ -1,4 +1,4 @@
-package net.vkits.platform.manager;
+package net.vkits.platform.wxService;
 
 import net.vkits.platform.config.WxConfig;
 import net.vkits.platform.config.WxMulitConfig;

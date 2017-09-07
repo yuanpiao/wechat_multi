@@ -1,4 +1,4 @@
-package net.vkits.platform.manager;
+package net.vkits.platform.wxService;
 
 import net.vkits.platform.handler.AbstractHandler;
 import net.vkits.platform.handler.MsgHandler;

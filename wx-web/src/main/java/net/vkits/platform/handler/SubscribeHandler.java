@@ -3,7 +3,7 @@ package net.vkits.platform.handler;
 import java.util.Map;
 
 import net.vkits.platform.builder.TextBuilder;
-import net.vkits.platform.manager.BaseWxService;
+import net.vkits.platform.wxService.BaseWxService;
 
 import me.chanjar.weixin.common.exception.WxErrorException;
 import me.chanjar.weixin.common.session.WxSessionManager;

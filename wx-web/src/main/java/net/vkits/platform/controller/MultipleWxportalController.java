@@ -2,8 +2,8 @@ package net.vkits.platform.controller;
 
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
-import net.vkits.platform.manager.MulitConfigService;
-import net.vkits.platform.manager.WxMulitService;
+import net.vkits.platform.wxService.MulitConfigService;
+import net.vkits.platform.wxService.WxMulitService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
