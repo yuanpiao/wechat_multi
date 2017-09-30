@@ -1,8 +1,8 @@
 package net.vkits.platform.handler.mulit;
 
 
-import net.vkits.platform.application.wechat.config.WxConfig;
-import net.vkits.platform.application.wechat.handler.LocationHandler;
+import net.vkits.platform.config.WxConfig;
+import net.vkits.platform.handler.LocationHandler;
 import org.springframework.stereotype.Component;
 
 @Component

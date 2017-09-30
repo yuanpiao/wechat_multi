@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
+ * 多公众号的微信配置入口，根据clientid来匹配不同的公众号
  * @author chi  2017-08-29 18:24
  **/
 @RestController

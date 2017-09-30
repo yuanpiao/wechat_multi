@@ -2,8 +2,6 @@ package net.vkits.platform.config;
 
 /**
  * 公众号标识的枚举类
- * @author Binary Wang
- *
  */
 public enum WxAccountEnum {
     GZH1(1, "公众号1"),
@@ -35,7 +33,6 @@ public enum WxAccountEnum {
                 return e.name().toLowerCase();
             }
         }
-
         return null;
     }
 }
