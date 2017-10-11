@@ -58,7 +58,6 @@ public abstract class BaseWxService extends WxMpServiceImpl {
         config.setToken(this.getServerConfig().getToken());// 设置微信公众号的token
         config.setAesKey(this.getServerConfig().getAesKey());// 设置消息加解密密钥
         super.setWxMpConfigStorage(config);
-
         this.refreshRouter();
     }
 

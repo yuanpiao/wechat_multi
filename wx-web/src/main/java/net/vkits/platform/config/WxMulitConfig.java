@@ -1,8 +1,18 @@
 package net.vkits.platform.config;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+
 /**
- * Created by duqingxiang on 17/7/3.
+ * @description: 多商户的配置信息
+ * @author: chi
+ * @Date: 11:52 2017/10/11/011
  */
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class WxMulitConfig extends WxConfig {
 
     private String clientId;
@@ -15,72 +25,33 @@ public class WxMulitConfig extends WxConfig {
 
     private String aesKey;
 
+    //自定义业务字段
     private String templateId;
-
+    //自定义业务字段
     private String billTemplateId;
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    public void setAppid(String appid) {
-        this.appid = appid;
-    }
-
-    public void setAppsecret(String appsecret) {
-        this.appsecret = appsecret;
-    }
-
-    public void setAesKey(String aesKey) {
-        this.aesKey = aesKey;
-    }
-
-    public void setTemplateId(String templateId) {
-        this.templateId = templateId;
-    }
 
     @Override
     public String getToken() {
-        return this.token;
+        return null;
     }
 
     @Override
     public String getAppid() {
-        return this.appid;
+        return null;
     }
 
     @Override
     public String getAppsecret() {
-        return this.appsecret;
+        return null;
     }
 
     @Override
     public String getAesKey() {
-        return this.aesKey;
+        return null;
     }
 
     @Override
     public WxAccountEnum getWxAccountEnum() {
         return null;
-    }
-
-    public String getClientId() {
-        return clientId;
-    }
-
-    public void setClientId(String clientId) {
-        this.clientId = clientId;
-    }
-
-    public String getTemplateId() {
-        return templateId;
-    }
-
-    public String getBillTemplateId() {
-        return billTemplateId;
-    }
-
-    public void setBillTemplateId(String billTemplateId) {
-        this.billTemplateId = billTemplateId;
     }
 }

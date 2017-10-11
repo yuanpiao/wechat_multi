@@ -20,19 +20,19 @@ public class WxMulitConfigWebService {
         ArrayList<WxMulitConfigDto> list = new ArrayList<>();
         WxMulitConfigDto wxMulitConfigDto = WxMulitConfigDto.builder()
                 .clientId("2")
-                .appid("wx9c0a6457245a2c0e")
-                .appsecret("7b6e299cef94aba338bd637c31cab6ab")
-                .token("wezebra")
+                .appid("wx9c0a64*****")
+                .appsecret("7b6e299cef94a******")
+                .token("token3")
                 .aesKey("4")
                 .build();
         list.add(wxMulitConfigDto);
 
         WxMulitConfigDto wxMulitConfigDto2 = WxMulitConfigDto.builder()
                 .clientId("1")
-                .appid("wx49ab3262ed6427b8")
-                .appsecret("75a9b1bd6e00aaf8b448ee11468d43a0")
-                .token("wezebra")
-                .aesKey("VnISrauPfxMVt3twwhErezR4Hm5eFe1rOCd9RFrON7L")
+                .appid("wx49ab326*****")
+                .appsecret("75a9b1bd6e00aa*****")
+                .token("token4")
+                .aesKey("VnISrauPfxMVt3twwhErez******")
                 .build();
         list.add(wxMulitConfigDto2);
 

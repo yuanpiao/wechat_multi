@@ -12,9 +12,8 @@ import net.vkits.platform.handler.MenuHandler;
 import net.vkits.platform.handler.SubscribeHandler;
 
 /**
- * 
- * @author Binary Wang
- *
+ * @description:
+ * @Date: 11:51 2017/10/11/011
  */
 @Service
 public class Gzh2WxService extends BaseWxService {

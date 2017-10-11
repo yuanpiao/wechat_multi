@@ -3,7 +3,7 @@ package net.vkits.platform.wxService;
 import net.vkits.platform.config.WxConfig;
 import net.vkits.platform.config.WxMulitConfig;
 import net.vkits.platform.handler.*;
-import net.vkits.platform.handler.gzh1.*;
+import net.vkits.platform.handler.mulit.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -17,25 +17,27 @@ public class WxMulitService extends BaseWxService {
 
     private WxMulitConfig wxConfig = new WxMulitConfig();
 
-    protected void setServerConfig(WxMulitConfig wxConfig) {
+    protected WxMulitService setServerConfig(WxMulitConfig wxConfig) {
         this.wxConfig = wxConfig;
+        return this;
     }
 
+    @Autowired
+    private MulitLocationHandler locationHandler;
 
     @Autowired
-    private Gzh1LocationHandler locationHandler;
+    private MulitMenuHandler menuHandler;
 
     @Autowired
-    private Gzh1MenuHandler menuHandler;
+    private MulitMsgHandler msgHandler;
 
     @Autowired
-    private Gzh1MsgHandler msgHandler;
+    private MulitUnSubscribeHandler unSubscribeHandler;
 
     @Autowired
-    private Gzh1UnSubscribeHandler unSubscribeHandler;
-
+    private MulitSubscribeHandler subscribeHandler;
     @Autowired
-    private Gzh1SubscribeHandler subscribeHandler;
+    private MulitScanHandler scanHandler;
 
     @Override
     protected WxConfig getServerConfig() {
@@ -44,32 +46,38 @@ public class WxMulitService extends BaseWxService {
 
     @Override
     protected MenuHandler getMenuHandler() {
+        this.menuHandler.setWxConfig(wxConfig);
         return this.menuHandler;
     }
 
     @Override
     protected SubscribeHandler getSubscribeHandler() {
+        this.subscribeHandler.setWxConfig(wxConfig);
         return this.subscribeHandler;
     }
 
     @Override
     protected UnsubscribeHandler getUnsubscribeHandler() {
+        this.unSubscribeHandler.setWxConfig(wxConfig);
         return this.unSubscribeHandler;
     }
 
     @Override
     protected AbstractHandler getLocationHandler() {
+        this.locationHandler.setWxConfig(wxConfig);
         return this.locationHandler;
     }
 
     @Override
     protected MsgHandler getMsgHandler() {
+        this.msgHandler.setWxConfig(wxConfig);
         return this.msgHandler;
     }
 
     @Override
     protected AbstractHandler getScanHandler() {
-        return this.getScanHandler();
+        this.scanHandler.setWxConfig(wxConfig);
+        return this.scanHandler;
     }
 
 }

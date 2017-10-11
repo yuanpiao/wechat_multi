@@ -3,6 +3,7 @@ package net.vkits.platform.wxService;
 import net.vkits.platform.config.WxMulitConfig;
 import net.vkits.platform.dto.WxMulitConfigDto;
 import net.vkits.platform.service.WxMulitConfigWebService;
+import net.vkits.platform.util.SpringUtil;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +22,9 @@ public class MulitConfigService {
     @Resource
     private ApplicationContext applicationContext;
 
+    /**
+     * 缓存商户id和对应的wxmulitService,如果集群条件下可以使用redis等缓存
+     */
     private ConcurrentHashMap<String, WxMulitService> hashMap = new ConcurrentHashMap<>();
 
     /**
@@ -38,21 +42,20 @@ public class MulitConfigService {
 
         for (WxMulitConfigDto wxMulitConfigDto: wxMulitConfigDtos) {
             WxMulitService wxMulit = (WxMulitService)applicationContext.getBean("wxMulitService");
-            WxMulitConfig wxConfig = new WxMulitConfig();
-            wxConfig.setClientId(wxMulitConfigDto.getClientId());
-            wxConfig.setAesKey(wxMulitConfigDto.getAesKey());
-            wxConfig.setAppid(wxMulitConfigDto.getAppid());
-            wxConfig.setAppsecret(wxMulitConfigDto.getAppsecret());
-            wxConfig.setBillTemplateId(wxMulitConfigDto.getBillTemplateId());
-            wxConfig.setToken(wxMulitConfigDto.getToken());
-            wxMulit.setServerConfig(wxConfig);
-            wxMulit.init();
 
+            WxMulitConfig wxConfig = WxMulitConfig.builder()
+                    .clientId(wxMulitConfigDto.getClientId())
+                    .aesKey(wxMulitConfigDto.getAesKey())
+                    .appid(wxMulitConfigDto.getAppid())
+                    .appsecret(wxMulitConfigDto.getAppsecret())
+                    .token(wxMulitConfigDto.getToken())
+                    .billTemplateId(wxMulitConfigDto.getBillTemplateId())
+                    .templateId(wxMulitConfigDto.getTemplateId())
+                    .build();
+
+            wxMulit.setServerConfig(wxConfig).init();
             hashMap.put(wxMulitConfigDto.getClientId(),wxMulit);
         }
-
-
-
     }
 
 
