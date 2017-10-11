@@ -12,12 +12,14 @@ import java.util.List;
 @Service
 public class WxMulitConfigWebService {
     /**
-     * 获得所有的多商户列表
+     * 获得所有的多商户列表,实际可以连接数据库
      * @return
      */
     public List<WxMulitConfigDto> getAllWxConfig(){
         //TODO chi
         ArrayList<WxMulitConfigDto> list = new ArrayList<>();
+
+        //商户1
         WxMulitConfigDto wxMulitConfigDto = WxMulitConfigDto.builder()
                 .clientId("2")
                 .appid("wx9c0a64*****")
@@ -27,6 +29,7 @@ public class WxMulitConfigWebService {
                 .build();
         list.add(wxMulitConfigDto);
 
+        //商户2
         WxMulitConfigDto wxMulitConfigDto2 = WxMulitConfigDto.builder()
                 .clientId("1")
                 .appid("wx49ab326*****")

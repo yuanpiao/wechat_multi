@@ -12,6 +12,10 @@ import javax.annotation.Resource;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * @author: chi
+ * @Date: 12:34 2017/10/11/011
+ */
 
 @Service
 public class MulitConfigService {
@@ -36,11 +40,18 @@ public class MulitConfigService {
         return hashMap.get(clientId);
     }
 
+
+    /**
+     * @description: 项目启动时缓存多个商户的wxService
+     * @author: chi
+     * @Date: 12:32 2017/10/11/011
+     */
     @PostConstruct
     public void wxMulitServiceInit(){
         List<WxMulitConfigDto> wxMulitConfigDtos = wxMulitConfigWebService.getAllWxConfig();
 
-        for (WxMulitConfigDto wxMulitConfigDto: wxMulitConfigDtos) {
+        wxMulitConfigDtos.forEach(wxMulitConfigDto ->{
+            //wxMulitService设置为多例,保证每一个商户有各自的wxService
             WxMulitService wxMulit = (WxMulitService)applicationContext.getBean("wxMulitService");
 
             WxMulitConfig wxConfig = WxMulitConfig.builder()
@@ -55,7 +66,7 @@ public class MulitConfigService {
 
             wxMulit.setServerConfig(wxConfig).init();
             hashMap.put(wxMulitConfigDto.getClientId(),wxMulit);
-        }
+        });
     }
 
 

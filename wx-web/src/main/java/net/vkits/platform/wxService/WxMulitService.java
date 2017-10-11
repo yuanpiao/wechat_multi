@@ -4,9 +4,10 @@ import net.vkits.platform.config.WxConfig;
 import net.vkits.platform.config.WxMulitConfig;
 import net.vkits.platform.handler.*;
 import net.vkits.platform.handler.mulit.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 
 /**
  * @author chi  2017-08-29 18:33
@@ -22,21 +23,21 @@ public class WxMulitService extends BaseWxService {
         return this;
     }
 
-    @Autowired
+    @Resource
     private MulitLocationHandler locationHandler;
 
-    @Autowired
+    @Resource
     private MulitMenuHandler menuHandler;
 
-    @Autowired
+    @Resource
     private MulitMsgHandler msgHandler;
 
-    @Autowired
+    @Resource
     private MulitUnSubscribeHandler unSubscribeHandler;
 
-    @Autowired
+    @Resource
     private MulitSubscribeHandler subscribeHandler;
-    @Autowired
+    @Resource
     private MulitScanHandler scanHandler;
 
     @Override
@@ -46,6 +47,7 @@ public class WxMulitService extends BaseWxService {
 
     @Override
     protected MenuHandler getMenuHandler() {
+        //刷新config
         this.menuHandler.setWxConfig(wxConfig);
         return this.menuHandler;
     }
