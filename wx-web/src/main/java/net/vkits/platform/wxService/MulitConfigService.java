@@ -3,7 +3,7 @@ package net.vkits.platform.wxService;
 import net.vkits.platform.config.WxMulitConfig;
 import net.vkits.platform.dto.WxMulitConfigDto;
 import net.vkits.platform.service.WxMulitConfigWebService;
-import net.vkits.platform.util.SpringUtil;
+import net.vkits.platform.service.WxMulitConfigWebServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
