@@ -3,7 +3,7 @@ package net.vkits.platform.wxService;
 import net.vkits.platform.config.WxConfig;
 import net.vkits.platform.config.WxMulitConfig;
 import net.vkits.platform.handler.*;
-import net.vkits.platform.handler.mulit.*;
+import net.vkits.platform.handler.multi.*;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -24,21 +24,21 @@ public class WxMulitService extends BaseWxService {
     }
 
     @Resource
-    private MulitLocationHandler locationHandler;
+    private MultiLocationHandler locationHandler;
 
     @Resource
-    private MulitMenuHandler menuHandler;
+    private MultiMenuHandler menuHandler;
 
     @Resource
-    private MulitMsgHandler msgHandler;
+    private MultiMsgHandler msgHandler;
 
     @Resource
-    private MulitUnSubscribeHandler unSubscribeHandler;
+    private MultiUnSubscribeHandler unSubscribeHandler;
 
     @Resource
-    private MulitSubscribeHandler subscribeHandler;
+    private MultiSubscribeHandler subscribeHandler;
     @Resource
-    private MulitScanHandler scanHandler;
+    private MultiScanHandler scanHandler;
 
     @Override
     protected WxConfig getServerConfig() {

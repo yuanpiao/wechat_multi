@@ -1,12 +1,11 @@
-package net.vkits.platform.handler.mulit;
-
+package net.vkits.platform.handler.multi;
 
 import net.vkits.platform.config.WxConfig;
-import net.vkits.platform.handler.UnsubscribeHandler;
+import net.vkits.platform.handler.MenuHandler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MulitUnSubscribeHandler extends UnsubscribeHandler {
+public class MultiMenuHandler extends MenuHandler {
 
   private WxConfig wxConfig;
 

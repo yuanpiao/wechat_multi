@@ -1,12 +1,12 @@
-package net.vkits.platform.handler.mulit;
+package net.vkits.platform.handler.multi;
 
 
 import net.vkits.platform.config.WxConfig;
-import net.vkits.platform.handler.LocationHandler;
+import net.vkits.platform.handler.UnsubscribeHandler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MulitLocationHandler extends LocationHandler {
+public class MultiUnSubscribeHandler extends UnsubscribeHandler {
 
   private WxConfig wxConfig;
 

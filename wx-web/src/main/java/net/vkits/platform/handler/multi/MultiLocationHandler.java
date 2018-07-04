@@ -1,11 +1,12 @@
-package net.vkits.platform.handler.mulit;
+package net.vkits.platform.handler.multi;
+
 
 import net.vkits.platform.config.WxConfig;
-import net.vkits.platform.handler.MenuHandler;
+import net.vkits.platform.handler.LocationHandler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MulitMenuHandler extends MenuHandler {
+public class MultiLocationHandler extends LocationHandler {
 
   private WxConfig wxConfig;
 

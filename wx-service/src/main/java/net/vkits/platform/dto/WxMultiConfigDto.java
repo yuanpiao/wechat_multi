@@ -17,7 +17,7 @@ import java.util.ArrayList;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class WxMulitConfigDto {
+public class WxMultiConfigDto {
     /**
      * 微信的平台id,自定义即可,注意不可重复
      */

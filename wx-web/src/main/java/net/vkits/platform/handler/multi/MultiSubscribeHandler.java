@@ -1,4 +1,4 @@
-package net.vkits.platform.handler.mulit;
+package net.vkits.platform.handler.multi;
 
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 
 @Component
-public class MulitSubscribeHandler extends SubscribeHandler {
+public class MultiSubscribeHandler extends SubscribeHandler {
 
     private WxConfig wxConfig;
 

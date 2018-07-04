@@ -1,9 +1,8 @@
 package net.vkits.platform.wxService;
 
 import net.vkits.platform.config.WxMulitConfig;
-import net.vkits.platform.dto.WxMulitConfigDto;
-import net.vkits.platform.service.WxMulitConfigWebService;
-import net.vkits.platform.service.WxMulitConfigWebServiceImpl;
+import net.vkits.platform.dto.WxMultiConfigDto;
+import net.vkits.platform.service.WxMultiConfigWebService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +20,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class MulitConfigService {
 
     @Resource
-    private WxMulitConfigWebService wxMulitConfigWebService;
+    private WxMultiConfigWebService wxMultiConfigWebService;
 
     @Resource
     private ApplicationContext applicationContext;
@@ -48,25 +47,25 @@ public class MulitConfigService {
      */
     @PostConstruct
     public void wxMulitServiceInit(){
-        List<WxMulitConfigDto> wxMulitConfigDtos = wxMulitConfigWebService.getAllWxConfig();
-        wxMulitConfigDtos.forEach(this::generateWxMulitConfig);
+        List<WxMultiConfigDto> wxMultiConfigDtos = wxMultiConfigWebService.getAllWxConfig();
+        wxMultiConfigDtos.forEach(this::generateWxMulitConfig);
     }
 
-    public void generateWxMulitConfig(WxMulitConfigDto wxMulitConfigDto){
+    public void generateWxMulitConfig(WxMultiConfigDto wxMultiConfigDto){
         //wxMulitService设置为多例,保证每一个商户有各自的wxService
         WxMulitService wxMulit = (WxMulitService)applicationContext.getBean("wxMulitService");
         WxMulitConfig wxConfig = WxMulitConfig.builder()
-                .clientId(wxMulitConfigDto.getClientId())
-                .aesKey(wxMulitConfigDto.getAesKey())
-                .appid(wxMulitConfigDto.getAppid())
-                .appsecret(wxMulitConfigDto.getAppsecret())
-                .token(wxMulitConfigDto.getToken())
-                .billTemplateId(wxMulitConfigDto.getBillTemplateId())
-                .templateId(wxMulitConfigDto.getTemplateId())
+                .clientId(wxMultiConfigDto.getClientId())
+                .aesKey(wxMultiConfigDto.getAesKey())
+                .appid(wxMultiConfigDto.getAppid())
+                .appsecret(wxMultiConfigDto.getAppsecret())
+                .token(wxMultiConfigDto.getToken())
+                .billTemplateId(wxMultiConfigDto.getBillTemplateId())
+                .templateId(wxMultiConfigDto.getTemplateId())
                 .build();
 
         wxMulit.setServerConfig(wxConfig).init();
-        wxMulitServiceMaps.put(wxMulitConfigDto.getClientId(),wxMulit);
+        wxMulitServiceMaps.put(wxMultiConfigDto.getClientId(),wxMulit);
     }
 
 

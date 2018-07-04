@@ -1,4 +1,4 @@
-package net.vkits.platform.handler.mulit;
+package net.vkits.platform.handler.multi;
 
 import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.mp.api.WxMpService;
@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 import java.util.Map;
 
 @Component
-public class MulitMsgHandler extends MsgHandler {
+public class MultiMsgHandler extends MsgHandler {
 
   private WxConfig wxConfig;
 
