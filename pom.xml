@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.vkits.platform</groupId>
-    <artifactId>wechat</artifactId>
+    <artifactId>wechat_mulit</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
