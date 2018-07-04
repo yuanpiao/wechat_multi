@@ -3,7 +3,7 @@
 ## 使用方法
 一,启动  
 1,修改项目resource下的programs.json,配置公众号相关信息  
-2,直接启动 net.vkits.platform.WechatWebApplication#main() 即可
+2,直接启动 net.vkits.platform.WechatWebApplication#main() 即可   
 二,动态增加公众号    
 访问 /wx_mulit_config 接口
 
