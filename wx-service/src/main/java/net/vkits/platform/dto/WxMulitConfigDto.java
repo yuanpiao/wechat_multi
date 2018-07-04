@@ -31,8 +31,10 @@ public class WxMulitConfigDto {
 
     private String aesKey;
 
+    /**
+     * 以下为有关业务性的字段
+     */
     private String templateId;
-
     private String billTemplateId;
 
 }
