@@ -11,11 +11,12 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 多公众号的微信配置入口，根据clientid来匹配不同的公众号
+ *
  * @author chi  2017-08-29 18:24
  **/
 @RestController
 @RequestMapping("/api/mulit/portal/{clientId}")
-public class MultipleWxportalController{
+public class MultipleWxportalController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -40,13 +41,13 @@ public class MultipleWxportalController{
 
     @ResponseBody
     @PostMapping(produces = "application/xml; charset=UTF-8")
-    public String post( @PathVariable String clientId,
-                        @RequestBody String requestBody,
-                        @RequestParam("timestamp") String timestamp,
-                        @RequestParam("nonce") String nonce,
-                        @RequestParam("signature") String signature,
-                        @RequestParam(name = "encrypt_type", required = false) String encType,
-                        @RequestParam(name = "msg_signature", required = false) String msgSignature) {
+    public String post(@PathVariable String clientId,
+                       @RequestBody String requestBody,
+                       @RequestParam("timestamp") String timestamp,
+                       @RequestParam("nonce") String nonce,
+                       @RequestParam("signature") String signature,
+                       @RequestParam(name = "encrypt_type", required = false) String encType,
+                       @RequestParam(name = "msg_signature", required = false) String msgSignature) {
 
         this.logger.info(
                 "\n接收微信请求：[signature=[{}], encType=[{}], msgSignature=[{}],"
@@ -85,5 +86,7 @@ public class MultipleWxportalController{
 
         return out;
     }
+
+
 
 }
