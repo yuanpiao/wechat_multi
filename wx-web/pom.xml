@@ -12,7 +12,7 @@
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
-		<artifactId>wechat</artifactId>
+		<artifactId>wechat_mulit</artifactId>
 		<groupId>net.vkits.platform</groupId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
