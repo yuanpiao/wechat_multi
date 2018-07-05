@@ -19,4 +19,4 @@
 #### 基于项目
 * https://github.com/Wechat-Group/weixin-java-tools
 #### 参考项目
-* https://github.com/tmp3000/weixin-java-mp-multi-demo.git
+* https://github.com/binarywang/weixin-java-mp-multi-demo.git
